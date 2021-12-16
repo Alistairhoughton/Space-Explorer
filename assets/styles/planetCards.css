@@ -1,0 +1,134 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+@keyframes hint{
+  0%{opacity: 0}
+  15%{opacity: 0.8;}
+  50%{opacity: 1;}
+  85%{opacity: 0.8;}
+  100%{opacity: 0;}
+}
+
+@keyframes hint_{
+  0%{opacity: 1; transform: translateY(0px);}
+  5%{opacity: 0; transform: translateY(-10px);}
+  10%{opacity: 1; transform: translateY(0px);}
+  15%{opacity: 0; transform: translateY(-10px);}
+  20%{opacity: 1; transform: translateY(0px);}
+  100%{opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes planetRotation{
+  0%{opacity: 1; transform:rotate(0deg);}
+  20%{opacity: 0.95; transform:rotate(2deg);}
+  50%{opacity: 0.95; transform:rotate(5deg);}
+  80%{opacity: 0.95; transform:rotate(2deg);}
+  100%{opacity: 1; transform:rotate(0deg);}
+}
+
+:root{
+  --imageHeight: 250px;
+  --iconTransitionTime:6s;
+}
+
+#planetcardholder {
+  height: auto;
+  width: 100vw;
+  z-index:-2;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items:center;
+  background-color: black;
+}
+
+/* @media only screen and (max-width: 1024px) {
+  #planetcardholder {
+    height: auto;
+  } */
+
+#facts{
+  width: 100%;
+  height: 10%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+#facts > div{
+  animation: hint var(--iconTransitionTime);
+  color: white;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#hint{
+  font-size: 20px;
+  font-weight: 300;
+  animation:hint_ 5s 5;
+}
+
+#cardList {
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+  justify-items: center;
+  align-content: space-around;
+  align-items: center;
+}
+
+#cardList > div {
+  margin: 50px;
+  flex: 0 1 var(--imageHeight);
+}
+
+#cardList > div > .card-image > .image{
+  animation: planetRotation 10s infinite;
+}
+
+#cardList > div > .card-image > .image :hover{
+  cursor: pointer;
+}
+
+#planetModalHead{
+  text-align: center;
+  background-color: rgb(27, 27, 27);
+  color: rgb(219, 219, 219);
+}
+
+#planetModalHead>*{
+  color: rgb(219, 219, 219);
+}
+
+#singlePlanetDataImg{
+  width:100%;
+}
+
+#singlePlanetExplanation{
+  margin: 10px;
+  text-justify:distribute-all-lines;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#singlePlanetData{
+  margin: 50px;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#singlePlanetData > * {
+  margin: 5px;
+}
+
+#planetModalFooter{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(27, 27, 27);
+  color: rgb(219, 219, 219);
+}
+
+#closeModal{
+  background-color: rgb(27, 27, 27);
+  color: rgb(219, 219, 219);
+}
